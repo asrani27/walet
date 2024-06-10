@@ -46,10 +46,10 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>{{$item->no_transaksi}}</td>
-                            <td>{{$item->supplier->nama}}</td>
+                            <td>{{$item->supplier == null ? '' :$item->supplier->nama}}</td>
                             <td>
                                 @foreach ($item->pembelian_detail as $detail)
-                                <li>{{$detail->bahan->nama}} - {{$detail->jumlah}} buah</li>
+                                <li>{{$detail->bahan == null ? '': $detail->bahan->nama}} - {{$detail->jumlah}} buah</li>
                                 @endforeach
                             </td>
                             <td>
