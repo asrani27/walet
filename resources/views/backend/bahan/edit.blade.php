@@ -28,16 +28,9 @@
                     @csrf
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Kode bahan</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" name="kode" value="{{$data->kode}}" readonly>
-                      </div>
-                    </div>
-                    
-                    <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Nomor Bahan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nomor" value="{{$data->kode}}" readonly>
+                        <input type="text" class="form-control" name="nomor" value="{{$data->nomor}}" readonly>
                       </div>
                     </div>
                     <div class="form-group row">
