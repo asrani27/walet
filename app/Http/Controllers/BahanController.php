@@ -57,6 +57,7 @@ class BahanController extends Controller
     public function update(Request $req, $id)
     {
         $s = Bahan::find($id);
+        $s->nomor = $req->nomor;
         $s->nama = $req->nama;
         $s->satuan = $req->satuan;
         $s->harga_beli = str_replace('.', '', $req->harga_beli);
