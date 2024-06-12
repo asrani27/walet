@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Edit Data bibit</h1>
+            <h1 class="m-0 text-dark">Edit Data bahan</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -24,44 +24,51 @@
             <div class="card card-outline card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="POST" action="{{route('editbibit',['id' => $data->id])}}">
+                <form class="form-horizontal" method="POST" action="{{route('editbahan',['id' => $data->id])}}">
                     @csrf
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Kode bibit</label>
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Kode bahan</label>
                       <div class="col-sm-10">
                         <input type="text" class="form-control" name="kode" value="{{$data->kode}}" readonly>
                       </div>
                     </div>
+                    
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Jenis bibit</label>
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nomor Bahan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="jenis" value="{{$data->jenis}}" >
+                        <input type="text" class="form-control" name="nomor" value="{{$data->kode}}" readonly>
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Umur bibit</label>
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Bahan</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="umur" value="{{$data->umur}}" >
+                        <input type="text" class="form-control" name="nama" placeholder="Nama bahan" value="{{$data->nama}}" >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Satuan</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="satuan" placeholder="satuan" value="{{$data->satuan}}" >
                       </div>
                     </div>
                     
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Harga Beli</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="harga_beli" value="{{$data->harga_beli}}"  id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+                        <input type="text" class="form-control" name="harga_beli" value="{{$data->harga_beli}}"  placeholder="0" id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Harga Jual</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="harga_jual"  value="{{$data->harga_jual}}"  id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
+                        <input type="text" class="form-control" name="harga_jual" value="{{$data->harga_jual}}"   placeholder="0" id="inputku" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Stok</label>
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Jumlah Stok</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="stok" value="{{$data->stok}}">
+                        <input type="text" class="form-control" name="stok" placeholder="0" value="{{$data->stok}}"  required onkeypress="return hanyaAngka(event)"/>
                       </div>
                     </div>
                   </div>
@@ -69,7 +76,7 @@
                   <div class="card-footer">
                     <button type="submit" class="btn btn-info"><i class="icon fas fa-check"></i>
                         Simpan</button>
-                    <a href="/bibit" class="btn btn-default float-right">Kembali</a>
+                    <a href="/bahan" class="btn btn-default float-right">Kembali</a>
                   </div>
                   <!-- /.card-footer -->
                 </form>
